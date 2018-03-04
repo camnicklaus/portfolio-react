@@ -1,0 +1,22 @@
+:root {
+  --transFast: 200ms;
+  --transMd: 400ms;
+  --transSlow: 1000ms;
+  --black: #292F36;
+  --white: #FBF5F3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+  background: var(--black);
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* #root {
+  display: grid;
+  grid-template-columns: min-content;
+} */
