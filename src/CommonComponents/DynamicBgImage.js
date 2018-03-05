@@ -1,26 +1,51 @@
 import React, { Component } from 'react';
 import { UnstyledATag } from 'CommonComponents/CustomLinks';
 import styled from 'styled-components';
-import { selectedLight, black } from 'styleConstants';
+import { selectedLight, black, transFast, transMd } from 'styleConstants';
 
-const BackGroundImgStyle = styled.div`
+const BackGroundImgStyle = styled(UnstyledATag)`
     padding-bottom: ${props => (props.imgRatio + '%')};
-    /* background: url(${props => props.image}) center / contain no-repeat; */
     height: ${props => (props.height + '%')};
     position: relative;
 `;
 const ImgHolder = styled.div`
     position: absolute;
-    /* width: 100%;
-    height: 100%; */
-    top: 0;
+    width: 100%;
+    height: 100%;
+    /* top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0; */
     box-shadow: inset 0 0 1px ${black};
     box-sizing: border-box;
     border-radius: 3px;
     background: url(${props => props.image}) center / ${props => props.backgroundPlacement} no-repeat;
+`;
+const ImgOverlay = styled.div`
+    transition: all ${transMd}ms;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    &:hover {
+        opacity: 1;
+    }
+`;
+const TitleOverlay = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+`;
+const BackgroundOverlay = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: gray;
+    opacity: 0.6;
 `;
 const IMAGE = styled.div`
     height: 100%;
@@ -76,7 +101,7 @@ class BackGroundImg extends Component {
     //     this.setState({imgRatio: ratio})
     // }
     render() {
-        const { link, backgroundPlacement } = this.props;
+        const { link, backgroundPlacement, overlayTitle } = this.props;
         const { fullRezImg, preLoadImg } = this.state;
         let img;
         fullRezImg ? img = fullRezImg : img = preLoadImg
@@ -84,10 +109,19 @@ class BackGroundImg extends Component {
             // <UnstyledATag href={link}>
                 <BackGroundImgStyle
                     href={link}
+                    target="_blank"
                     imgRatio={backgroundPlacement === 'cover' ? 0 : this.state.imgRatio}
                     height={backgroundPlacement === 'cover' ? 100 : 0}
                     >
                     <ImgHolder backgroundPlacement={backgroundPlacement} image={img} />
+                    {overlayTitle && <ImgOverlay>
+                        <BackgroundOverlay />
+                        <TitleOverlay>
+                            {overlayTitle}
+                        </TitleOverlay>
+                    </ImgOverlay>}
+
+
                 </BackGroundImgStyle>
 
             // </UnstyledATag>

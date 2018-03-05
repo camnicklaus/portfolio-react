@@ -43,8 +43,8 @@ export const BodyTileSection = styled.div`
     display: grid;
     /* grid-template-columns: 1fr 1fr; */
     /* grid-template-columns: repeat(auto-fit, 150px); */
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-    grid-auto-rows: minmax(395px, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-auto-rows: minmax(300px, 1fr);
     grid-gap: ${PADDING * 2}px;
 
 

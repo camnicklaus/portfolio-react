@@ -5,8 +5,7 @@ export const primaryBgColor = "#"
 export const black = "#292F36";
 export const white = "#FBF5F3";
 export const selectedLight = '#00bcd4'
-// export const blackRGB = "rgb(41,47,54)";
-// export const whiteRGB = "rgb(251,245,243)";
+export const atavasGray = '#3a4650';
 
 export const blackRGB = (a) => (`rgba(41,47,54,${a || 1})`);
 export const whiteRGB = (a) => (`rgba(251,245,243,${a || 1})`);

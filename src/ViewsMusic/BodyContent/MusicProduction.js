@@ -18,35 +18,41 @@ const MusicProduction = () => {
             </BodyCopySection>
             <BodyTileSection>
                 <BackGroundImg
-                    image={blackAngelsImg.blackAngelsImage}
-                    // imagePreLoad={thePPImagePreLoad}
-                    link={"http://www.thepalepacific.com/"}
-                    backgroundPlacement={"cover"} />
-                <BackGroundImg
                     image={grouploveImg.grouploveImage}
                     // imagePreLoad={thePPImagePreLoad}
-                    link={"http://www.thepalepacific.com/"}
-                    backgroundPlacement={"cover"} />
-                <BackGroundImg
-                    image={walkmenImg.walkmenImage}
-                    // imagePreLoad={thePPImagePreLoad}
-                    link={"http://www.thepalepacific.com/"}
-                    backgroundPlacement={"cover"} />
-                <BackGroundImg
-                    image={vanceJoyImg.vanceJoyImage}
-                    // imagePreLoad={thePPImagePreLoad}
-                    link={"http://www.thepalepacific.com/"}
-                    backgroundPlacement={"cover"} />
+                    link={"http://www.grouplovemusic.com/"}
+                    backgroundPlacement={"cover"}
+                    overlayTitle="Grouplove" />
                 <BackGroundImg
                     image={pillarPointImg.pillarPointImage}
                     // imagePreLoad={thePPImagePreLoad}
-                    link={"http://www.thepalepacific.com/"}
-                    backgroundPlacement={"cover"} />
+                    link={"http://pillarpointmusic.com/"}
+                    backgroundPlacement={"cover"}
+                    overlayTitle="Pillar Point" />
+                <BackGroundImg
+                    image={blackAngelsImg.blackAngelsImage}
+                    // imagePreLoad={thePPImagePreLoad}
+                    link={"http://theblackangels.com/"}
+                    backgroundPlacement={"cover"}
+                    overlayTitle="The Black Angels" />
+                <BackGroundImg
+                    image={walkmenImg.walkmenImage}
+                    // imagePreLoad={thePPImagePreLoad}
+                    link={"http://thewalkmen.com/"}
+                    backgroundPlacement={"cover"}
+                    overlayTitle="The Walkmen" />
+                <BackGroundImg
+                    image={vanceJoyImg.vanceJoyImage}
+                    // imagePreLoad={thePPImagePreLoad}
+                    link={"http://www.vancejoy.com/"}
+                    backgroundPlacement={"cover"}
+                    overlayTitle="Vance Joy" />
                 <BackGroundImg
                     image={boatImg.boatImage}
                     // imagePreLoad={thePPImagePreLoad}
-                    link={"http://www.thepalepacific.com/"}
-                    backgroundPlacement={"cover"} />
+                    link={"http://www.ohnodisaster.com/boat/"}
+                    backgroundPlacement={"cover"}
+                    overlayTitle="B.O.A.T." />
             </BodyTileSection>
         </BodyContentWrap>
     )

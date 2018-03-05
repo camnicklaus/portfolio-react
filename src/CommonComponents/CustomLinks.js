@@ -7,7 +7,7 @@ import { white, PADDING, HEADER_HEIGHT, blackRGB, whiteRGB, transFast, transSlow
 export const UnstyledATag = styled.a`
     text-decoration: none;
     color: ${props => props.color || white};
-    display: inline-block;
+    display: block;
 `;
 
 export const MyLink = styled(Link)`
