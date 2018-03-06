@@ -23,7 +23,7 @@ export const transDistance = BASE_UNIT * 5;
 export const PADDING = BASE_UNIT;
 export const buttonWidth = BASE_UNIT * 12;
 
-export const HEADER_HEIGHT = BASE_UNIT * 6;
+export const HEADER_HEIGHT = BASE_UNIT * 4;
 export const FOOTER_HEIGHT = BASE_UNIT * 4;
 
 export const zIndexBottom = 0;

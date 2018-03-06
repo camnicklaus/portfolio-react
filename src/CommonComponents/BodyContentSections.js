@@ -22,7 +22,7 @@ export const BodyContentWrap = styled.div`
 export const BodyCopySection = styled.div`
     /* grid-area: 1 / 1 / 4 / 2; */
     grid-area: copy;
-    padding: ${PADDING}px;
+    padding: 0 ${PADDING}px;
     /* @media (max-width: 767px) {
         grid-area: 1 / 1 / 2 / 4;
     } */
@@ -30,7 +30,7 @@ export const BodyCopySection = styled.div`
 export const BodyImgSection = styled.div`
     /* grid-area: 1 / 2 / 3 / 4; */
     grid-area: img;
-    padding: ${PADDING}px;
+    padding: 0 ${PADDING}px;
     position: relative;
     /* @media (max-width: 767px) {
         grid-area: 2 / 1 / 4 / 4;
@@ -39,7 +39,7 @@ export const BodyImgSection = styled.div`
 export const BodyTileSection = styled.div`
     /* border: 1px solid red; */
     grid-area: img;
-    padding: ${PADDING}px;
+    padding: 0 ${PADDING}px;
     display: grid;
     /* grid-template-columns: 1fr 1fr; */
     /* grid-template-columns: repeat(auto-fit, 150px); */

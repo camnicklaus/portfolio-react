@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, Switch, Link, withRouter } from 'react-router-dom';
-import { MyLink } from 'CommonComponents/CustomLinks';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import {TransitionGroup, Transition} from 'react-transition-group';
 
 // style
@@ -10,7 +9,7 @@ import SplashEntry from "ViewsHome/SplashEntry";
 import Home from "ViewsHome/Home";
 
 const App = (props) => {
-  const { match, location } = props;
+  const { location } = props;
   const transTiming = transFast;
         // console.log('app props: ', props)
         const defaultStyle = {

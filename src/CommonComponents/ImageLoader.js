@@ -5,6 +5,8 @@ import camFamImagePreLoad from 'Assets/Images/cam-fam-preload.jpg';
 import summerAngelImage from 'Assets/Images/summer-angel.jpg';
 import summerAngelImagePreLoad from 'Assets/Images/summer-angel-preload.jpg';
 
+//audio production//
+
 import blackAngelsImage from 'Assets/Images/black-angels.jpg';
 import grouploveImage from 'Assets/Images/grouplove.jpg';
 import walkmenImage from 'Assets/Images/walkmen.jpg';
@@ -12,38 +14,85 @@ import vanceJoyImage from 'Assets/Images/vance-joy.jpg';
 import pillarPointImage from 'Assets/Images/pillar-point.jpg';
 import boatImage from 'Assets/Images/boat.jpg';
 
+//coding
 
-export const thePPImg = {
+import camPortfolioImage from 'Assets/Images/meportfolio.png';
+import githubImage from 'Assets/Images/github.png';
+import codepenImage from 'Assets/Images/codepen.png';
+import zulabedImage from 'Assets/Images/zulabed.jpg';
+import subscriblyImage from 'Assets/Images/subscribly.jpg';
+import atavusImage from 'Assets/Images/atavus.jpg';
+import ruthieImage from 'Assets/Images/ruthienicklaus.jpg';
+
+const thePPImg = {
     thePPImage,
     thePPImagePreLoad
 };
-export const camFamImg = {
+const camFamImg = {
     camFamImage,
     camFamImagePreLoad
 };
-export const summerAngelImg = {
+const summerAngelImg = {
     summerAngelImage,
     summerAngelImagePreLoad
 };
-export const blackAngelsImg = {
+const blackAngelsImg = {
     blackAngelsImage,
 };
-export const grouploveImg = {
+const grouploveImg = {
     grouploveImage,
 };
-export const walkmenImg = {
+const walkmenImg = {
     walkmenImage,
 };
-export const vanceJoyImg = {
+const vanceJoyImg = {
     vanceJoyImage,
 };
-export const pillarPointImg = {
+const pillarPointImg = {
     pillarPointImage,
 };
-export const boatImg = {
+const boatImg = {
     boatImage,
 };
+const camPortfolioImg = {
+    camPortfolioImage
+}
+const githubImg = {
+    githubImage
+}
+const codepenImg = {
+    codepenImage
+}
+const zulabedImg = {
+    zulabedImage
+}
+const subscriblyImg = {
+    subscriblyImage
+}
+const atavusImg = {
+    atavusImage
+}
+const ruthieImg = {
+    ruthieImage
+}
 
-
+export {
+    thePPImg,
+    camFamImg,
+    summerAngelImg,
+    blackAngelsImg,
+    grouploveImg,
+    walkmenImg,
+    vanceJoyImg,
+    pillarPointImg,
+    boatImg,
+    camPortfolioImg,
+    githubImg,
+    codepenImg,
+    zulabedImg,
+    subscriblyImg,
+    atavusImg,
+    ruthieImg
+}
 
 
