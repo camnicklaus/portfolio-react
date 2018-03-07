@@ -6,8 +6,9 @@ export const BodyContentWrap = styled.div`
     /* grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr); */
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
+        'copy   title'
         'copy   img'
         'copy   img';
     @media (max-width: ${MEDIA_MOBILE}px) {
@@ -46,6 +47,7 @@ export const BodyTileSection = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     grid-auto-rows: minmax(300px, 1fr);
     grid-gap: ${PADDING * 2}px;
-
-
-// `;
+`;
+export const BodyTitleSection = styled.div`
+    grid-area: title;
+`;

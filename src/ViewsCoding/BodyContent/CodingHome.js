@@ -1,5 +1,6 @@
 import React from 'react';
-import { BodyContentWrap, BodyCopySection, BodyImgSection, BodyTileSection } from 'CommonComponents/BodyContentSections';
+import MediaQuery from 'react-responsive';
+import { BodyContentWrap, BodyCopySection, BodyImgSection, BodyTileSection, BodyTitleSection } from 'CommonComponents/BodyContentSections';
 import BackGroundImg from 'CommonComponents/DynamicBgImage';
 import {
     selectedLight,
@@ -66,10 +67,11 @@ const Ul = styled.ul`
     flex-flow: wrap column;
     max-height: 100px;
     list-style: none;
+    font-size: smaller;
     padding-left: ${PADDING}px;
     border-left: 1px solid ${selectedLight};
 `;
-const DynamicText = styled.h4`
+const DynamicText = styled.h3`
     text-decoration: underline;
     &:before {
         content: "${props => props.LgMediaText}";
@@ -102,7 +104,7 @@ const CodingHome = () => {
                 I love problem solving, working with a team, and learning new things.</p>
                 <SectionContainer>
                     <Section>
-                        <h4 style={{textDecoration: 'underline'}}>I'm fairly proficient with:</h4>
+                        <h3 style={{textDecoration: 'underline'}}>Proficient with:</h3>
                         <Ul>
                             <li>HTML</li>
                             <li>CSS</li>
@@ -117,7 +119,7 @@ const CodingHome = () => {
                         </Ul>
                     </Section>
                     <Section>
-                        <h4 style={{textDecoration: 'underline'}}>I've had some experience with:</h4>
+                        <h3 style={{textDecoration: 'underline'}}>Some experience with:</h3>
                         <Ul>
                             <li>Ember</li>
                             <li>MongoDB</li>
@@ -126,8 +128,16 @@ const CodingHome = () => {
                         </Ul>
                     </Section>
                 </SectionContainer>
-                <DynamicText LgMediaText="To the right" SmMediaText="Below"> are some of my recent projects</DynamicText>
+                <MediaQuery query="(max-width: 767px)">
+                    <h3 style={{textDecoration: 'underline'}}>Recent projects:</h3>
+                </MediaQuery>
+                {/* <DynamicText LgMediaText="To the right" SmMediaText="Below"> are some recent projects</DynamicText> */}
             </BodyCopySection>
+            <BodyTitleSection>
+                <MediaQuery query="(min-width: 768px)">
+                    <h3 style={{textDecoration: 'underline', textAlign: 'center', marginTop: 0}}>Recent projects:</h3>
+                </MediaQuery>
+            </BodyTitleSection>
             <BodyTileSection>
 
                 <BackGroundImg

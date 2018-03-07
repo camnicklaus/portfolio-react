@@ -1,30 +1,13 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import MediaQuery from 'react-responsive';
-
-import TransitionWrap from 'CommonComponents/TransitionWrap';
 import styled from 'styled-components';
 
-import { MyHeaderLink, MyHeaderNonLinkStyle } from "CommonComponents/CustomLinks";
-// import BackGroundImg from 'CommonComponents/DynamicBgImage';
+// style
+import { HEADER_HEIGHT, FOOTER_HEIGHT } from 'styleConstants';
 
-import { MusicPlayer, BeachLights, ThePalePacific, MusicHome, MusicProduction } from 'ViewsMusic';
-import { HeaderComponent, BodyContentWrap, BodyWrap } from 'ViewsHome';
-
-// style constants
-import {
-    black,
-    white,
-    HEADER_HEIGHT,
-    FOOTER_HEIGHT,
-    transMd,
-    transFast,
-    transSlow,
-    zIndexTop
-} from 'styleConstants';
-
-import beachLightsTracks from 'Assets/Audio/beachLights';
-import beachLightsTracksInfo from 'Assets/Audio/beachLights/beachLightsInfo.json';
+//components
+import { HeaderComponent, BodyContentWrap, BodyWrap, FooterComponent } from 'ViewsHome';
 
 const PageWrap = styled.div`
     display: grid;
@@ -44,27 +27,7 @@ const Body = styled.div`
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
 `;
-const Footer = styled.div`
-    grid-area: Footer;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-        "FooterLeft FooterCenter FooterRight";
-    justify-content: center;
-    align-items: center;
-`;
-const FooterLeft = styled.div`
-    grid-area: FooterLeft;
-    display: grid;
-`;
-const FooterCenter = styled.div`
-    grid-area: FooterCenter;
-    display: grid;
-`;
-const FooterRight = styled.div`
-    grid-area: FooterRight;
-    display: grid;
-`;
+
 const Home = (props) => {
     const {match, location} = props;
     return (
@@ -75,17 +38,7 @@ const Home = (props) => {
             <Body gridArea={"Body"}>
                 <Route path={`/:route`} component={BodyWrap} />
             </Body>
-            <Footer gridArea={"Footer"}>
-                <FooterLeft>
-                </FooterLeft>
-                <FooterCenter>
-                </FooterCenter>
-                <FooterRight>
-                    <TransitionWrap addStyles={{justifySelf: 'end'}} in={location.pathname === "/music/beach-lights"} timing={transFast}>
-                        <MusicPlayer audioTracks={beachLightsTracks} tracksInfo={beachLightsTracksInfo} />
-                    </TransitionWrap>
-                </FooterRight>
-            </Footer>
+            <FooterComponent {...props} />
         </PageWrap>
     )
 }

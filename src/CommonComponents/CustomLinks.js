@@ -59,6 +59,7 @@ export const MyHeaderNonLinkStyle = styled.div`
 //different syntax to avoid react dom props error :-)
 const MenuLink = styled(({smallMedia, children, ...rest}) => <NavLink {...rest}>{children}</NavLink>)`
     transition: all ${transFast}ms;
+    //keep menu items from collapsing on mobile menu transition
     flex: 0 0 auto;
     color: ${white};
     text-decoration: none;
@@ -70,10 +71,13 @@ const MenuLink = styled(({smallMedia, children, ...rest}) => <NavLink {...rest}>
     &:before {
         color: ${white};
         margin-right: ${PADDING}px;
-        content: "|";
+        content: ${props => props.smallMedia ? "''" : "'|'"};
     }
     &:first-of-type:before {
         content: "";
+    }
+    &:last-of-type {
+        padding-right: ${PADDING}px;
     }
     &:hover {
         transition: all ${transFast}ms;

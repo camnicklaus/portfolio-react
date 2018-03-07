@@ -4,9 +4,11 @@ import styled from 'styled-components';
 import { selectedLight, black, transFast, transMd, PADDING } from 'styleConstants';
 
 const BackGroundImgStyle = styled(UnstyledATag)`
-    padding-bottom: ${props => (props.imgRatio + '%')};
-    height: ${props => (props.height + '%')};
+    padding-bottom: ${props => props.backgroundPlacement === 'cover' ? '' : props.imgRatioHeight + '%'};
+    height: ${props => (props => props.backgroundPlacement === 'cover' ? '100%' : '')};
+    width: ${props => (props => props.backgroundPlacement === 'cover' ? '' :props.imgRatioWidth + '%')};
     position: relative;
+    margin: ${props => props.backgroundPlacement === 'cover' ? '' : '0 auto'};
 `;
 
 const ImgHolder = styled.div`
@@ -55,7 +57,8 @@ class BackGroundImg extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            imgRatio: 100,
+            imgRatioHeight: 100,
+            imgRatioWidth: 100,
             preLoadImg: null,
             fullRezImg: null
         }
@@ -72,8 +75,13 @@ class BackGroundImg extends Component {
             let preloading = new Image();
             preloading.src = imagePreLoad;
             preloading.onload = () => {
+                let imgRatioHeight = preloading.height / preloading.width * 100;
+                let imgRatioWidth = preloading.width / preloading.height * 100;
+                if (imgRatioHeight > 100) imgRatioHeight = 100;
+                if (imgRatioWidth > 100) imgRatioWidth = 100;
                 this.setState({
-                    imgRatio: (preloading.height / preloading.width * 100),
+                    imgRatioHeight,
+                    imgRatioWidth,
                     preLoadImg: imagePreLoad,
                     naturalWidth: preloading.naturalWidth,
                     naturalHeight: preloading.naturalHeight
@@ -82,8 +90,13 @@ class BackGroundImg extends Component {
         }
         if (!this.state.fullRezImg) {
             loading.onload = () => {
+                let imgRatioHeight = loading.height / loading.width * 100;
+                let imgRatioWidth = loading.width / loading.height * 100;
+                if (imgRatioHeight > 100) imgRatioHeight = 100;
+                if (imgRatioWidth > 100) imgRatioWidth = 100;
                 this.setState({
-                    imgRatio: (loading.height / loading.width * 100),
+                    imgRatioHeight,
+                    imgRatioWidth,
                     fullRezImg: image,
                     naturalWidth: loading.naturalWidth,
                     naturalHeight: loading.naturalHeight
@@ -91,46 +104,35 @@ class BackGroundImg extends Component {
             }
         }
     }
-    // getImgRatio = (src) => {
-    //     return new Promise((resolve, reject) => {
-    //         let img = new Image()
-    //         img.onload = () => resolve(img.height / img.width * 100)
-    //         img.onerror = reject
-    //         img.src = src
-    //     })
-    // }
-    // async setImageRatio() {
-    //     const ratio = await this.getImgRatio(this.props.image);
-    //     // console.log(ratio)
-    //     this.setState({imgRatio: ratio})
-    // }
     render() {
         const { link, backgroundPlacement, overlayTitle, backgroundColor } = this.props;
         const { fullRezImg, preLoadImg } = this.state;
         let img;
         fullRezImg ? img = fullRezImg : img = preLoadImg
         return (
-                <BackGroundImgStyle
-                    innerRef={el => this.imageDiv = el}
-                    href={link}
-                    target="_blank"
-                    //use the cover vs contain bg image attr to determine placement
-                    imgRatio={backgroundPlacement === 'cover' ? 0 : this.state.imgRatio}
-                    height={backgroundPlacement === 'cover' ? 100 : 0}
-                >
-                    <ImgHolder
-                        backgroundPlacement={backgroundPlacement}
-                        backgroundColor={backgroundColor}
-                        image={img}
-                    />
-                    {overlayTitle &&
-                        <ImgOverlayWrap>
-                            <BackgroundOverlay />
-                            <TitleOverlay>
-                                {overlayTitle}
-                            </TitleOverlay>
-                        </ImgOverlayWrap>}
-                </BackGroundImgStyle>
+            <BackGroundImgStyle
+                innerRef={el => this.imageDiv = el}
+                href={link}
+                target="_blank"
+                //use the cover vs contain bg image attr to determine placement
+                imgRatioHeight={this.state.imgRatioHeight}
+                imgRatioWidth={this.state.imgRatioWidth}
+                // height={backgroundPlacement === 'cover' ? 100 : 0}
+                backgroundPlacement={backgroundPlacement}
+            >
+                <ImgHolder
+                    backgroundPlacement={backgroundPlacement}
+                    backgroundColor={backgroundColor}
+                    image={img}
+                />
+                {overlayTitle &&
+                    <ImgOverlayWrap>
+                        <BackgroundOverlay />
+                        <TitleOverlay>
+                            {overlayTitle}
+                        </TitleOverlay>
+                    </ImgOverlayWrap>}
+            </BackGroundImgStyle>
         )
     }
 }

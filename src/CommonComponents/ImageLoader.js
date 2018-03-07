@@ -21,8 +21,11 @@ import githubImage from 'Assets/Images/github.png';
 import codepenImage from 'Assets/Images/codepen.png';
 import zulabedImage from 'Assets/Images/zulabed.jpg';
 import subscriblyImage from 'Assets/Images/subscribly.jpg';
+import subscribly2Image from 'Assets/Images/subscribly2.jpg';
 import atavusImage from 'Assets/Images/atavus.jpg';
+import atavus2Image from 'Assets/Images/atavus2.jpg';
 import ruthieImage from 'Assets/Images/ruthienicklaus.jpg';
+
 
 const thePPImg = {
     thePPImage,
@@ -69,8 +72,14 @@ const zulabedImg = {
 const subscriblyImg = {
     subscriblyImage
 }
+const subscribly2Img = {
+    subscribly2Image
+}
 const atavusImg = {
     atavusImage
+}
+const atavus2Img = {
+    atavus2Image
 }
 const ruthieImg = {
     ruthieImage
@@ -91,7 +100,9 @@ export {
     codepenImg,
     zulabedImg,
     subscriblyImg,
+    subscribly2Img,
     atavusImg,
+    atavus2Img,
     ruthieImg
 }
 

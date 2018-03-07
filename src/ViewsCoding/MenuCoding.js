@@ -9,11 +9,13 @@ const MenuCoding = (props) => {
         <MenuContentWrapLg>
             <MyMenuLink to={`${match.url}/home`}>About</MyMenuLink>
             <MyMenuLink to={`${match.url}/subscribly`}>Subscribly</MyMenuLink>
+            <MyMenuLink to={`${match.url}/atavus`}>Atavus</MyMenuLink>
         </MenuContentWrapLg>
     ) : (
         <MenuContentWrapSm menuActive={menuActive}>
             <MyMenuLink smallMedia={smallMedia} onClick={menuClick} to={`${match.url}/home`}>About</MyMenuLink>
             <MyMenuLink smallMedia={smallMedia} onClick={menuClick} to={`${match.url}/subscribly`}>Subscribly</MyMenuLink>
+            <MyMenuLink smallMedia={smallMedia} onClick={menuClick} to={`${match.url}/atavus`}>Atavus</MyMenuLink>
         </MenuContentWrapSm>
     )
 }
