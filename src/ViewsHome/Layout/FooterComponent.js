@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Route } from 'react-router-dom';
 
-import {transFast } from 'styleConstants';
+import {transFast, selectedLight } from 'styleConstants';
 
 import TransitionWrap from 'CommonComponents/TransitionWrap';
 import { FooterRightWrap } from 'ViewsHome';
@@ -42,6 +42,7 @@ const FooterRight = styled.div`
 const FooterComponent = ({location, ...rest}) => (
     <Footer gridArea={"Footer"}>
     <FooterLeft>
+        <p style={{margin: 0, fontSize: 'small', color: selectedLight}}>This site is a work in progress by: Cameron Nicklus</p>
     </FooterLeft>
     {/* <FooterCenter>
     </FooterCenter> */}

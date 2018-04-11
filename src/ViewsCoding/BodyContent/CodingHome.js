@@ -35,11 +35,11 @@ const ImageWrap = styled.div`
 
 const ImageMask = styled.div`
     background: ${selectedLight};
-    border-radius: 20px;
+    border-radius: 10px;
     position: absolute;
     height: 100%;
     width: 100%;
-    opacity: 0.1;
+    opacity: 0.04;
 `;
 
 const ProfileImg = styled.div`
@@ -49,7 +49,7 @@ const ProfileImg = styled.div`
     height: calc(100% - ${PADDING}px);
     z-index: ${zIndexMid};
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: inset 0 0 1px ${black}, 0 0 30px -8px black;
     background: url(${props => props.image}) center / ${props => props.backgroundPlacement} no-repeat;
 `;
@@ -104,7 +104,7 @@ const CodingHome = () => {
                 I love problem solving, working with a team, and learning new things.</p>
                 <SectionContainer>
                     <Section>
-                        <h3 style={{textDecoration: 'underline'}}>Proficient with:</h3>
+                        <h3>Proficient with:</h3>
                         <Ul>
                             <li>HTML</li>
                             <li>CSS</li>
@@ -119,7 +119,7 @@ const CodingHome = () => {
                         </Ul>
                     </Section>
                     <Section>
-                        <h3 style={{textDecoration: 'underline'}}>Some experience with:</h3>
+                        <h3>Some experience with:</h3>
                         <Ul>
                             <li>Ember</li>
                             <li>MongoDB</li>
@@ -129,13 +129,13 @@ const CodingHome = () => {
                     </Section>
                 </SectionContainer>
                 <MediaQuery query="(max-width: 767px)">
-                    <h3 style={{textDecoration: 'underline'}}>Recent projects:</h3>
+                    <h3>Recent projects:</h3>
                 </MediaQuery>
                 {/* <DynamicText LgMediaText="To the right" SmMediaText="Below"> are some recent projects</DynamicText> */}
             </BodyCopySection>
             <BodyTitleSection>
                 <MediaQuery query="(min-width: 768px)">
-                    <h3 style={{textDecoration: 'underline', textAlign: 'center', marginTop: 0}}>Recent projects:</h3>
+                    <h3 style={{ textAlign: 'center', marginTop: 0}}>Recent projects:</h3>
                 </MediaQuery>
             </BodyTitleSection>
             <BodyTileSection>

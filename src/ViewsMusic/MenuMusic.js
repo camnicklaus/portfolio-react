@@ -1,6 +1,7 @@
 import React from 'react';
 import { MenuContentWrapLg, MenuContentWrapSm } from 'CommonComponents/MenuWrappers';
 import { MyMenuLink } from 'CommonComponents/CustomLinks';
+import { ProjectDetailMenuToggle } from 'CommonComponents/ProjectDetailMenuToggle';
 
 const MenuMusic = (props) => {
     // console.log('sidebarmusic: ', this.props)
@@ -8,9 +9,12 @@ const MenuMusic = (props) => {
     return !smallMedia ? (
         <MenuContentWrapLg>
             <MyMenuLink to={`${match.url}/home`}>About</MyMenuLink>
-            <MyMenuLink to={`${match.url}/the-pale-pacific`}>The Pale Pacific</MyMenuLink>
-            <MyMenuLink to={`${match.url}/beach-lights`}>Beach Lights</MyMenuLink>
-            <MyMenuLink to={`${match.url}/production`}>Music Production</MyMenuLink>
+            <ProjectDetailMenuToggle match={match}>
+                <MyMenuLink to={`${match.url}/the-pale-pacific`}>The Pale Pacific</MyMenuLink>
+                <MyMenuLink to={`${match.url}/beach-lights`}>Beach Lights</MyMenuLink>
+                <MyMenuLink to={`${match.url}/production`}>Music Production</MyMenuLink>
+            </ProjectDetailMenuToggle>
+            
         </MenuContentWrapLg>
     ) : (
         <MenuContentWrapSm menuActive={menuActive}>

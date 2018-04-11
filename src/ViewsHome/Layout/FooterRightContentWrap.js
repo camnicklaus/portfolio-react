@@ -58,8 +58,8 @@ class BodyContentWrap extends Component {
                                 ...defaultStyle,
                                 ...transStyle[status]
                             }}>
-                                {match.params.route === 'music' && <MusicPlayer audioTracks={beachLightsTracks} tracksInfo={beachLightsTracksInfo} /> }
-                                {match.params.route === 'coding' && <FooterRightCoding location={location} />}
+                                {match.params.route === 'music' && match.params.subroute === 'beach-lights' && <MusicPlayer audioTracks={beachLightsTracks} tracksInfo={beachLightsTracksInfo} /> }
+                                {/* {match.params.route === 'coding' && <FooterRightCoding location={location} />} */}
                             </div>
                         )
                     }}

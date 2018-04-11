@@ -93,3 +93,31 @@ const MenuLink = styled(({smallMedia, children, ...rest}) => <NavLink {...rest}>
 export const MyMenuLink = ({activeClassName, smallMedia, ...props}) => (
     <MenuLink {...props} smallMedia={smallMedia} activeClassName={`selected ${activeClassName}`} />
 );
+export const MyMenuLinkStyleOnly = styled.div`
+    transition: all ${transFast}ms;
+    flex: 0 0 auto;
+    color: ${white};
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 ${PADDING / 2}px;
+    height: ${HEADER_HEIGHT}px;
+    cursor: pointer;
+    &:before {
+        color: ${white};
+        margin-right: ${PADDING}px;
+        content: ${props => props.smallMedia ? "''" : "'|'"};
+    }
+    &:first-of-type:before {
+        content: "";
+    }
+    &:last-of-type {
+        padding-right: ${PADDING}px;
+    }
+    &:hover {
+        transition: all ${transFast}ms;
+        opacity: 0.7;
+        color: ${props => props.smallMedia ? white : selectedLight};
+    }
+`;
